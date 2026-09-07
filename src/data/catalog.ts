@@ -31,7 +31,7 @@ export type Product = {
   rating: number;
   reviews: number;
   image: string;
-  badge?: "New" | "Bestseller" | "Deal" | "Limited";
+  badge?: "New" | "Bestseller" | "Deal" | "Limited" | undefined;
   delivery: string;
   stock: number;
   sold: number;

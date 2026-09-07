@@ -6,15 +6,15 @@ import { byId, type Product } from "@/data/catalog";
 export type CartLine = {
   id: string;
   qty: number;
-  color?: string;
-  size?: string;
+  color?: string | undefined;
+  size?: string | undefined;
 };
 
 type ShopState = {
   cart: CartLine[];
   wishlist: string[];
   recentlyViewed: string[];
-  addToCart: (id: string, opts?: { qty?: number; color?: string; size?: string; silent?: boolean }) => void;
+  addToCart: (id: string, opts?: { qty?: number | undefined; color?: string | undefined; size?: string | undefined; silent?: boolean | undefined }) => void;
   setQty: (id: string, qty: number) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;

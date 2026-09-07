@@ -168,7 +168,7 @@ export function Header() {
                         onMouseEnter={() => setActiveCat(c.slug)}
                         onClick={() => {
                           setMegaOpen(false);
-                          navigate({ to: "/category/$slug", params: { slug: c.slug } });
+                          navigate({ to: "/category/$slug", params: { slug: c.slug }, search: { sub: undefined } });
                         }}
                         className={`w-full px-5 py-2.5 text-left text-sm font-medium transition ${
                           activeCat === c.slug ? "bg-card text-primary-deep" : "text-ink hover:bg-card"

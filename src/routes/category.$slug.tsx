@@ -6,7 +6,7 @@ import { bdt, categories, products } from "@/data/catalog";
 
 export const Route = createFileRoute("/category/$slug")({
   validateSearch: (search: Record<string, unknown>) => ({
-    sub: typeof search.sub === "string" ? search.sub : undefined,
+    sub: typeof search['sub'] === "string" ? (search['sub'] as string) : undefined,
   }),
   head: ({ params }) => {
     const cat = categories.find((c) => c.slug === params.slug);
