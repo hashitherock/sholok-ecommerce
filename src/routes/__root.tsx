@@ -10,6 +10,13 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { AiAssistant } from "@/components/AiAssistant";
+import { QuickViewProvider } from "@/components/QuickViewProvider";
+import { ShopProvider } from "@/lib/shop-store";
+import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -119,8 +126,21 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <ShopProvider>
+        <QuickViewProvider>
+          <div className="flex min-h-screen flex-col bg-background">
+            <Header />
+            <main className="flex-1 pb-16 lg:pb-0">
+              {/* Required: nested routes render here. */}
+              <Outlet />
+            </main>
+            <Footer />
+          </div>
+          <MobileBottomNav />
+          <AiAssistant />
+          <Toaster position="top-center" />
+        </QuickViewProvider>
+      </ShopProvider>
     </QueryClientProvider>
   );
 }
