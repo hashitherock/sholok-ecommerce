@@ -143,6 +143,7 @@ export function Header() {
                   key={l.label}
                   to="/category/$slug"
                   params={{ slug: l.slug }}
+                  search={{ sub: undefined }}
                   className="whitespace-nowrap rounded-[8px] px-3 py-2 text-sm font-medium text-ink hover:bg-surface"
                 >
                   {l.label}
