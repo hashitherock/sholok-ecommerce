@@ -231,7 +231,7 @@ export const products: Product[] = seeds.map((s, i) => {
     oldPrice,
     rating,
     reviews,
-    image: categoryImages[category],
+    image: categoryImages[category] ?? fashion,
     badge,
     delivery: i % 3 === 0 ? "Free delivery" : i % 3 === 1 ? "Delivery in 24h" : "Express available",
     stock,
@@ -252,7 +252,7 @@ export const byId = (id: string) => products.find((p) => p.id === id);
 export const flashDeals = products.filter((p) => discountOf(p) >= 33).slice(0, 10);
 export const bestSellers = products.filter((p) => p.badge === "Bestseller");
 export const newArrivals = products.filter((p) => p.badge === "New");
-export const trending = [products[0], products[16], products[10], products[31], products[24], products[8]];
+export const trending = [0, 16, 10, 31, 24, 8].map((i) => products[i]).filter((p): p is Product => Boolean(p));
 export const recommended = products.slice(3, 13);
 
 export const brands = [

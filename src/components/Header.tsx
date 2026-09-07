@@ -36,7 +36,7 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [activeCat, setActiveCat] = useState(categories[0].slug);
+  const [activeCat, setActiveCat] = useState(categories[0]?.slug ?? "grocery");
   const navigate = useNavigate();
 
   useEffect(() => {

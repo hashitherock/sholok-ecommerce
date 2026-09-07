@@ -32,7 +32,7 @@ function mockReply(q: string): Msg {
     return {
       role: "bot",
       text: "Gift ideas people are loving right now:",
-      items: [products[0], products[50], products[33]].filter(Boolean),
+      items: [products[0], products[50], products[33]].filter((p): p is Product => Boolean(p)),
     };
   }
   if (t.includes("trend")) {
