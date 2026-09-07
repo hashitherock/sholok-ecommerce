@@ -152,7 +152,7 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
                           type="button"
                           onClick={() => {
                             onClose();
-                            navigate({ to: "/category/$slug", params: { slug: c.slug } });
+                            navigate({ to: "/category/$slug", params: { slug: c.slug }, search: { sub: undefined } });
                           }}
                           className="rounded-[10px] border border-border px-3 py-1.5 text-xs font-semibold hover:border-primary"
                         >

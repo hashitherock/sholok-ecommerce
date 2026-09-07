@@ -15,7 +15,7 @@ export function MobileBottomNav() {
       <Link to="/" className={item} activeProps={activeProps} activeOptions={{ exact: true }}>
         <Home className="h-5 w-5" /> Home
       </Link>
-      <Link to="/category/$slug" params={{ slug: "fashion" }} className={item} activeProps={activeProps}>
+      <Link to="/category/$slug" params={{ slug: "fashion" }} search={{ sub: undefined }} className={item} activeProps={activeProps}>
         <LayoutGrid className="h-5 w-5" /> Categories
       </Link>
       <Link to="/search" search={{ q: "" }} className={item} activeProps={activeProps}>
